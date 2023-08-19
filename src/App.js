@@ -1,22 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import MoleContainer from "./MoleContainer";
+import "./App.css";
 
 function App() {
+  function createMoleHill() {
+    let hills = [];
+    for (let i = 0; i < 9; i++) {
+      hills.push(<MoleContainer key={i} />);
+    }
+    return <div className="mole-hills">{hills}</div>;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>React-A-Mole</h1>
+        {createMoleHill()}
       </header>
     </div>
   );
